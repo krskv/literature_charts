@@ -1,0 +1,270 @@
+@import "../templates/_vars.sass"
+@import "../templates/_styleguide.sass"
+
+#breadcrumps
+	padding: .6rem 8rem 0 10rem
+	text-align: left
+	@include respond-to(small)
+		padding-left: 4rem
+	ul
+		li
+			font-size: 2rem
+			color: #0e275e
+			position: relative
+			display: inline-flex
+			justify-content: center
+			align-items: center
+			img,a
+				margin-right: 1.4rem
+			a:hover
+				font-style: normal
+				text-decoration: underline
+			&.home
+				font-size: 2rem
+				color: $black
+				font-weight: 600
+
+.hamburger
+	position: absolute
+	top: 9rem
+	margin: 0
+	z-index: 9999
+	cursor: pointer
+	left: 3.3rem
+	&_line
+		transition: all 0.3s ease-in-out
+		width: 4rem
+		margin: 5px 0
+		height: 2px
+		background-color: $darkblue
+	&.is_active
+		transition: all 0.3s ease-in-out
+		transition-delay: 0.6s
+		transform: rotate(45deg)
+		.hamburger_line
+			&:nth-child(2)
+				width: 0px
+			&:nth-child(1), &:nth-child(3)
+				transition-delay: 0.3s
+			&:nth-child(1)
+				transform: translateY(.85rem)
+				@include respond-to(medium)
+					transform: translateY(1rem)
+			&:nth-child(3)
+				transform: translateY(-.85rem) rotate(90deg)
+				@include respond-to(medium)
+					transform: translateY(-1rem) rotate(90deg)
+
+.main_header,.header
+	width: 100%
+	background: $graybg
+	&__wrapper
+		width: 100%
+		display: flex
+		justify-content: space-between
+		position: relative
+	&__lang
+		display: inline-flex
+		justify-content: center
+		align-items: center
+		ul
+			margin: 0 .2rem
+			li
+				display: inline-flex
+				border-right: 1px solid #000
+				@include respond-to(small)
+					border: none
+					display: flex
+					justify-content: center
+				&:last-child
+					border-right: none
+				a
+					color: $black
+					margin: 0
+					padding: 0 .65rem
+					font-family: Lora
+					&:hover
+						padding: 0 .53rem
+						font-weight: bold
+						font-style: normal
+
+.header
+	background-color: $graybg
+	z-index: 999
+	position: fixed
+	top: 0
+	left: 0
+	&__nav
+		margin-top: 6rem
+		display: none
+		padding: 0 3.3rem
+		text-align: left
+	&__wrapper
+		min-height: 8rem
+		padding: 2rem 3.3rem
+		height: 100%
+		display: flex
+		justify-content: space-between
+		align-items: flex-end
+		@include respond-to(small)
+			align-items: flex-start
+	&__logo
+		h2
+			font-size: 2rem
+			color: $black
+			text-align: left
+			font-weight: 600
+	&.expanded
+		padding-bottom: 1.6rem
+		nav.header__nav
+			display: block
+
+.main_header
+	min-height: 60rem
+	padding: 4rem 3.3rem
+	display: flex
+	justify-content: space-between
+	align-items: flex-end
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 999
+	@include respond-to(tablet)
+		min-height: 8rem
+		position: fixed
+		padding: 2rem 3.3rem
+	.hamburger
+		display: none
+		@include respond-to(tablet)
+			display: block
+	&__lang
+		align-items: flex-start
+	&__nav
+		display: inline-flex
+		flex-direction: column
+		justify-content: flex-start
+		nav
+			margin-top: 8.5rem
+			@include respond-to(tablet)
+				display: none
+			ul
+				li
+					text-align: left
+					padding: .2rem 0
+					a:hover
+						text-decoration: underline
+					&.on_extended_menu_only
+						display: none
+	&__logo
+		width: 80rem
+		@include respond-to(tablet)
+			width: auto
+		h1
+			text-align: left
+			font-size: 9rem
+			line-height: 9rem
+			color: $darkblue
+			@include respond-to(tablet)
+				font-size: 2rem
+				line-height: 2.1rem
+				color: $black
+				font-weight: 600
+	&.minified
+		min-height: 8rem
+		position: fixed
+		top: 0
+		left: 0
+		z-index: 999
+		padding: 2rem 3.3rem
+		.hamburger
+			display: block
+		nav
+			display: none
+		.main_header__logo
+			width: auto
+			padding-top: .5rem
+			h1
+				font-size: 2rem
+				line-height: 2.1rem
+				color: $black
+				font-weight: 600
+	&.expanded
+		.main_header__wrapper
+			padding-top: .9rem
+		.main_header__nav
+			nav
+				display: block
+	&.expanded.minified
+		li.on_extended_menu_only
+			display: block
+
+#home_page
+	.home_content
+		&__wrapper
+			padding-bottom: 9rem
+		&__item
+			margin-top: 3.4rem
+			a
+				h2
+					text-align: left
+					font-size: 2.2rem
+				img
+					width: 100%
+					height: 30rem
+					object-fit: cover
+					object-position: center center
+				&:hover
+					h2
+						font-weight: 600
+						color: $darkblue
+					p
+						color: $darkblue
+						font-style: normal
+		&__load_more
+			background-color: transparent
+			+border($black)
+			margin-top: 5rem
+			padding: .7rem 3.5rem
+			&:hover
+				cursor: pointer
+				background-color: $black
+				color: #fff
+
+#about_page
+	.col
+		margin-top: 6rem
+	.about_project
+		h3
+			margin: 0rem auto 1.5rem
+			font-size: 2rem
+			font-weight: 600
+	.creators
+		h2
+			text-align: right
+		a
+			font-size: 1.5rem
+	.partners
+		&__list
+			margin-top: 6rem
+			text-align: left
+			li
+				font-weight: 100
+				font-size: 7.5rem
+				line-height: 9rem
+
+#contacts_page
+	.contacts
+		p
+			margin-top: 6rem
+			text-align: center
+			font-size: 7.5rem
+			line-height: 9rem
+			font-family: 'SF UI Display'
+			font-weight: 100
+			a
+				color: #0e275e
+				font-size: 7.5rem
+				font-weight: normal
+				color: $darkblue
+				&:hover
+					text-decoration: underline

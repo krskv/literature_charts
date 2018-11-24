@@ -1,0 +1,89 @@
+@import "templates/_vars.sass"
+
+footer
+	width: 100%
+	.footer_nav__wrapper
+		width: 100%
+		nav.footer_nav
+			padding: 0 2rem
+			ul
+				display: flex
+				justify-content: space-between
+				@include respond-to(tablet)
+					flex-direction: column
+				li
+					padding: 0 1rem
+					position: relative
+					top: 0
+					left: 0
+					@include respond-to(tablet)
+						margin: .5rem 0
+					a
+						text-decoration: none
+	.footer_partners__wrapper
+		width: 100%
+		padding: 1rem 3.3rem
+		background-color: $graybg
+		.footer_partners
+			display: flex
+			justify-content: center
+			align-items: center
+			&_item
+				width: 15rem
+				margin: 0 3rem
+				&:nth-child(2)
+					width: 25rem
+				img
+					width: 100%
+	.footer_goback#scroll-top
+		padding: .5rem 2rem
+		background-color: $black
+		a
+			color: #efefef
+			font-size: 1.4rem
+			font-weight: 400
+			display: block
+			width: 100%
+			line-height: 3rem
+			font-style: normal
+			figure.footer_goback_circle
+				width: 1.8rem
+				height: 1.8rem
+				padding-bottom: .2rem
+				border-radius: 50%
+				+border(#efefef)
+				margin: 0 0 0 2rem
+				display: inline-flex
+				justify-content: center
+				align-items: center
+				img
+					width: 85%
+
+//Modal template
+
+// .hero_menu
+// 	position: fixed
+// 	left: 0
+// 	top: 0
+// 	width: 100%
+// 	height: 100%
+// 	display: none
+// 	justify-content: center
+// 	align-items: center
+// 	overflow: hidden
+// 	&.is_active
+// 		display: flex
+// 	.paranja
+// 		top: 0
+// 		left: 0
+// 		width: 100%
+// 		height: 100%
+// 		z-index: 1
+// 		background-color: rgba(0,0,0,.7)
+// 		position: absolute
+// 	&__wrapper
+// 		position: absolute
+// 		left: 0
+// 		right: 0
+// 		margin: auto
+// 		z-index: 2

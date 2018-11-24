@@ -1,0 +1,147 @@
+//colors
+
+$bg: #fff
+$graybg: #efefef
+$black: #333
+$red: #e94c43
+$blue: #4dacc9
+$darkblue: #0e275e
+
+//media
+$mobil: 480px
+$smaller: 700px
+$small: 768px
+$tablet: 992px
+$medium: 1024px
+$desktop: 1170px
+$laptop: 1281px
+$prelarge: 1600px
+$large: 1920px
+
+// media queries mixins
+
+@mixin respond-to($media) 
+  @if $media == mobil 
+    @media only screen and (max-width: $mobil) 
+      @content 
+
+  @else if $media == smaller 
+    @media only screen and (max-width: $smaller) 
+      @content
+
+  @else if $media == small 
+    @media only screen and (max-width: $small) 
+      @content 
+
+  @else if $media == tablet 
+    @media only screen and (max-width: $tablet) 
+      @content
+
+  @else if $media == medium-small
+    @media only screen and (max-width: $medium-small)  
+      @content
+
+  @else if $media == medium 
+    @media only screen and (max-width: $medium)  
+      @content
+
+  @else if $media == desktop 
+    @media only screen and (max-width: $desktop)  
+      @content
+
+  @else if $media == laptop
+    @media only screen and (max-width: $laptop)  
+      @content
+
+  @else if $media == prelarge 
+    @media only screen and (max-width: $prelarge)  
+      @content
+
+  @else if $media == large 
+    @media only screen and (max-width: $large)  
+      @content
+
+//@include respond-to(medium) 
+
+
+//fonts
+
+=font($name: OpenSansLight,$style: normal,$weight: normal)
+	font-family: $name, sans-serif
+	font-weight: $weight
+	font-style: $style
+
+
+//mixins
+
+=animation($name,$duration,$function: linear, $itteration: infinite)
+  animation-name: $name
+  animation-duration: $duration
+  animation-iteration-count: $itteration
+  animation-timing-function: $function
+
+=flex($display: flex, $flow: row nowrap, $justify: center, $align: center)
+  display: $display
+  flex-flow: $flow 
+  justify-content: $justify
+  align-items: $align
+
+=trans($speed: .3s,$easing: linear)
+	transition: all $speed $easing
+
+=nobg
+	background-color: rgba(0,0,0,0)	
+
+=border($color: white,$width: 1px)
+  border: $width solid $color
+
+=bg($position: center center, $bgsize: cover,$repeat: false)
+	background-position: $position !important
+	background-size: $bgsize !important
+	@if $repeat
+		background-repeat: repeat !important
+	@else  
+		background-repeat: no-repeat !important
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+
+=keyframes($name)
+  @-webkit-keyframes #{$name}
+    @content
+  @-moz-keyframes #{$name}
+    @content
+  @-ms-keyframes #{$name}
+    @content
+  @keyframes #{$name}
+    @content
+
+@mixin font-face($name, $path, $weight: null, $style: null, $exts: woff)
+  $src: null
+
+  $extmods: (eot: "?", svg: "#" + str-replace($name, " ", "_"))
+
+  $formats: (otf: "opentype", ttf: "truetype")
+
+  @each $ext in $exts
+    $extmod: if(map-has-key($extmods, $ext), $ext + map-get($extmods, $ext), $ext)
+    $format: if(map-has-key($formats, $ext), map-get($formats, $ext), $ext)
+    $src: append($src, url(quote($path + "." + $extmod)) format($format), comma)
+
+
+  @font-face
+    font-family: quote($name)
+    font-style: $style
+    font-weight: $weight
+    src: $src
+
+
+

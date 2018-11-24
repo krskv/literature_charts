@@ -1,0 +1,196 @@
+@import "vars.sass"
+
+//Fonts
+
+@font-face
+  font-family: 'Lora'
+  src: url('../fonts/Lora-Bold.woff') format("woff")
+  font-weight: bold
+  font-style: normal
+
+
+@font-face
+  font-family: 'Lora'
+  src: url('../fonts/Lora-BoldItalic.woff') format("woff")
+  font-weight: bold
+  font-style: italic
+
+
+@font-face
+  font-family: 'Lora'
+  src: url('../fonts/Lora-Italic.woff') format("woff")
+  font-weight: normal
+  font-style: italic
+
+
+@font-face
+  font-family: 'Lora'
+  src: url('../fonts/Lora-Regular.woff') format("woff")
+  font-weight: normal
+  font-style: normal
+
+
+@font-face
+  font-family: 'SF UI Display'
+  src: url('../fonts/SFUIDisplay-Heavy.woff') format("woff")
+  font-weight: 900
+  font-style: normal
+
+
+@font-face
+  font-family: 'SF UI Display'
+  src: url('../fonts/SFUIDisplay-Light.woff') format("woff")
+  font-weight: 300
+  font-style: normal
+
+
+@font-face
+  font-family: 'SF UI Display'
+  src: url('../fonts/SFUIDisplay-Semibold.woff') format("woff")
+  font-weight: 600
+  font-style: normal
+
+@font-face
+  font-family: 'SF UI Display'
+  src: url('../fonts/SFUIDisplay-Ultralight.woff') format("woff")
+  font-weight: 100
+  font-style: normal
+
+@font-face
+  font-family: 'SF UI Display'
+  src: url('../fonts/SFUIDisplay-Regular.woff') format("woff")
+  font-weight: normal
+  font-style: normal
+
+
+//General
+
+html
+	overflow-x: hidden
+	font-size: 50%
+	@include respond-to(laptop)
+		font-size: 50%
+	@include respond-to(medium)
+		font-size: 43.75%
+	// @include respond-to(mobil)
+	// 	font-size: 37.5%
+
+*,*:active,*:focus
+	outline: none !important
+	box-sizing: border-box
+
+textarea
+	resize: none
+
+.hidden
+	display: none
+
+.content-wrapper
+	max-width: 1440px
+	width: 100%
+	padding: .8rem 1.5rem
+	margin: auto
+
+body
+	margin: 0
+	min-height: 100vh
+	min-width: 300px
+	position: relative
+	font-size: 1.6rem
+	line-height: 1.6
+	+bg
+	+font('SF UI Display')
+	color: $black
+	font-weight: 400
+	overflow-x: hidden
+	text-align: center
+	margin-top: 7rem
+	background-color: $bg
+	@include respond-to(small)
+		margin-top: 15rem
+	&.with_main_header
+		margin-top: 0
+		padding-top: 65rem
+		@include respond-to(tablet)
+			padding-top: 0
+			margin-top: 14rem
+	&.no-scroll
+		overflow: hidden
+		height: 100%
+
+article.page
+	width: 100%
+	min-height: 60vh
+
+section
+	+bg
+	width: 100%
+	hight: 100%
+	padding: 4rem 8rem
+	@include respond-to(tablet)
+		padding: 4rem 4rem
+	@include respond-to(mobil)
+		padding: 4rem 2rem
+
+ul
+	list-style: none
+	padding-left: 0px
+
+a
+	color: $black
+	font-size: 2rem
+	text-decoration: none
+	&:hover
+		color: $darkblue
+		font-style: italic
+
+h1,h2,h3,h4,h5,h6
+	margin: 0
+	+font('SF UI Display')
+	color: $black
+	text-align: left
+
+h2
+	font-size: 9rem
+	color: $darkblue
+
+p
+	margin-top: .5rem
+	font-size: 1.4rem
+	line-height: 2.5rem
+	text-align: left
+	font-family: Lora
+
+//FORM STYLE
+input[type="submit"]
+
+input[type="text"],textarea
+
+*::-webkit-input-placeholder
+	text-align: left
+	color: #d7d7d7
+	opacity: 1
+
+*:-moz-placeholder
+	text-align: left
+	color: #d7d7d7
+	opacity: 1
+
+*::-moz-placeholder
+	text-align: left
+	color: #d7d7d7
+	opacity: 1
+
+*:-ms-input-placeholder
+	text-align: left
+	color: #d7d7d7
+	opacity: 1
+
+body input:focus:required:invalid,
+body textarea:focus:required:invalid
+	text-align: left
+	color: #d7d7d7
+body input:required:valid,
+body textarea:required:valid
+	text-align: left
+	color: #d7d7d7

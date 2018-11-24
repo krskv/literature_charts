@@ -1,0 +1,272 @@
+doctype html
+html(lang="uk")
+	include templates/head
+	body#top-scroll
+		include templates/header
+		include templates/breadcrumps
+		article#diagrams_page.page
+			section#circle_diagram_mid.circle_diagram_mid.diagram
+				h2 7.1 Чи читаєте ви електронні книжки - книжки з ноутбука/комп'ютера, планшета, смартфона
+				.container
+					.row
+						.col-md-4.col-xs-12.circle_diagram_mid__col
+							table.circle_diagram_mid__info
+								tr
+									th.percent.timer.count-number(style="color: #212e58" data-to="67.8")
+									th.text ні
+								tr
+									th.percent.timer.count-number(style="color: #212e58" data-to="0.9")
+									th.text не відповіли
+						.col-md-4.col-xs-12.circle_diagram_mid__col
+							.circle_diagram_mid__wrapper
+								canvas( id="circle_diagram_mid_ch")
+						.col-md-4.col-xs-12.circle_diagram_mid__col
+							table.circle_diagram_mid__info
+								tr
+									th.percent.timer.count-number(style="color: #212e58" data-to="31.3")
+									th.text так
+
+			section#circle_diagram.circle_diagram.diagram
+				h2 2. Чи любите ви читати?
+				.container
+					.row
+						.col-sm-12.col-lg-6.circle_diagram__col
+							table.circle_diagram__info
+								tr
+									th.percent.timer.count-number(style="color: #212e58" data-to="19.5")
+									th.text мені це зовсім нецікаво
+								tr
+									th.percent.timer.count-number(style="color: #3b608e" data-to="32.2")
+									th.text інколи хочеться щось почитати
+								tr
+									th.percent.timer.count-number(style="color: #5d88bf" data-to="33.4")
+									th.text загалом люблю читати
+								tr
+									th.percent.timer.count-number(style="color: #88a2cb" data-to="10.6")
+									th.text не уявляю свого життя без читання
+								tr
+									th.percent.timer.count-number(style="color: #becadf" data-to="4.3")
+									th.text важко відповісти
+						.col-sm-12.col-lg-6.circle_diagram__col
+							.circle_diagram__wrapper
+								canvas( id="circle_diagram_ch")
+
+			section#line_diagram.line_diagram.diagram
+				h2 1. Як часто ви проводите дозвілля таким чином?
+				.container
+					.row
+						.col-sm-12
+							.line_diagram__wrapper
+								.line_diagram__legend
+									.line_diagram__legend_item
+										.color(style="background-color: #212e58")
+										span.title ніколи
+									.line_diagram__legend_item
+										.color(style="background-color: #3b608e")
+										span.title декілька разів на рік
+									.line_diagram__legend_item
+										.color(style="background-color: #5d88bf")
+										span.title кілька разів на місяць
+									.line_diagram__legend_item
+										.color(style="background-color: #88a2cb")
+										span.title кілька разів на тиждень
+									.line_diagram__legend_item
+										.color(style="background-color: #becadf")
+										span.title щодня
+								.line_diagram__list
+									.line_diagram__list_item
+										img(src="img/gym.svg", alt="icon_name").icon
+										span.title ходжу в кіно / на концерти / на виставки
+										.percent_line#percent_line1
+									.line_diagram__list_item
+										img(src="img/gym.svg", alt="icon_name").icon
+										span.title на природі
+										.percent_line#percent_line2
+									.line_diagram__list_item
+										img(src="img/gym.svg", alt="icon_name").icon
+										span.title на природі
+										.percent_line#percent_line3
+								.line_diagram__list
+									.line_diagram__list_item
+										img(src="img/gym.svg", alt="icon_name").icon
+										span.title на природі
+										.percent_line#percent_line4
+									.line_diagram__list_item
+										img(src="img/gym.svg", alt="icon_name").icon
+										span.title на природі
+										.percent_line#percent_line5
+									.line_diagram__list_item
+										img(src="img/gym.svg", alt="icon_name").icon
+										span.title на природі
+										.percent_line#percent_line6
+
+			section#chart_diagram.chart_diagram.diagram
+				h2 4. Скільки друкованних книжок Ви прочитали за останній рік?
+				h3 4.1 А скільки з них було книжок українського видавництва?
+				.container
+					.row
+						.col-sm-12
+							.chart_diagram__wrapper
+								canvas#chart_diagram_ch
+
+			section#sides_diagram.sides_diagram.diagram
+				h3 6.1 Чи були серед придбанних Вами книжок такі, яві Вам не дуже потрібні, але ви купили їх з наступних причин?
+				.container
+					.row
+						.col-sm-12.col-md-8.sides_diagram__wrapper
+								table.sides_diagram__table
+									thead
+										tr
+											th усі
+											th
+											th
+											th ті, хто за останній рік придбали хоча б одну друковану книгу
+									tbody
+										tr
+											td.timer.count-number(data-to="15.7")
+											td.icon
+												img(src="img/gym.svg", alt="placeholder")
+											td на подарунок
+											td.timer.count-number(data-to="13.9")
+										tr
+											td.timer.count-number(data-to="1")
+											td.icon
+												img(src="img/coffee.svg", alt="icon_name")
+											td щоб фінансово підтимати автора
+											td.timer.count-number(data-to="2.6")
+										tr
+											td.timer.count-number(data-to="1.3")
+											td.icon
+												img(src="img/gym.svg", alt="icon_name")
+											td щоб фінансово підтимати видавництво
+											td.timer.count-number(data-to="3.2")
+										tr
+											td.timer.count-number(data-to="20.3")
+											td.icon
+											td нічого з наведенного
+											td.timer.count-number(data-to="50.1")
+										tr
+											td.timer.count-number(data-to="2.3")
+											td.icon
+											td важко відповісти
+											td.timer.count-number(data-to="5.7")
+
+		include templates/footer
+
+		script(src="js/number-counter.js")
+		script(src="js/chart.min.js")
+		script(src="js/diagrams.js")
+
+		script.
+			var colors = ["#212e58","#3b608e","#5d88bf","#88a2cb","#becadf", "#462556","#efefef","#333333","#ee746a"];
+
+			var circle_diagram_data = [19.5,32.2,33.4,10.6,4.3];
+
+			var circle_diagram_labels = ['мені це зовсім нецікаво','інколи хочеться щось почитати','загалом люблю читати','не уявляю свого життя без читання','важко відповісти'];
+
+			var circle_diagram_mid_data = [31.3,67.8,0.9];
+
+			var circle_diagram_mid_labels = ['так','ні','не відповіли'];
+
+			var chart_diagram_labels = ['0(жодної)','1-5','6-10','10-25','більше 50','важко відповісти','не відповіли'];
+
+			var chart_diagram_data_1 = [37.1,36.2,14.2,6.4,3.7,1.5,6.6,0.2];
+			var chart_diagram_data_2 = [56.4,25.7,6.1,2.7,2.1,0.4,6.9,0.5];
+
+			var line_data = [
+				{
+					title: 'ніколи',
+					value: 19.5
+				},
+				{
+					title: 'декілька разів на рік',
+					value: 32.2
+				},
+				{
+					title: 'кілька разів на місяць',
+					value: 33.4
+				},
+				{
+					title: 'кілька разів на тиждень',
+					value: 10.6
+				},
+				{
+					title: 'щодня',
+					value: 4.3
+				}
+			]
+
+			$('#percent_line1').percentLine(line_data);
+			$('#percent_line2').percentLine(line_data);
+			$('#percent_line3').percentLine(line_data);
+			$('#percent_line4').percentLine(line_data);
+			$('#percent_line5').percentLine(line_data);
+			$('#percent_line6').percentLine(line_data);
+
+			var ctx_cd = document.getElementById('chart_diagram_ch').getContext('2d');
+			var chart = new Chart(ctx_cd, {
+					type: 'bar',
+					data: {
+							labels: chart_diagram_labels,
+							datasets: [{
+									label: "всього",
+									backgroundColor: "#462556",
+									data: chart_diagram_data_1
+							},{
+									label: "українського видавництва",
+									backgroundColor: "#ee746a",
+									data: chart_diagram_data_2
+							}]
+					},
+					options: {
+						maintainAspectRatio: false,
+						title: {
+							display: true,
+							text: 'кількість книжок'
+						},
+						legend: {
+								display: true,
+								position: 'bottom',
+						}
+					}
+			});
+
+			var ctx_cdmc = document.getElementById('circle_diagram_mid_ch').getContext('2d');
+			var chart = new Chart(ctx_cdmc, {
+					type: 'doughnut',
+					data: {
+							labels: circle_diagram_mid_labels,
+							datasets: [{
+									borderWidth: .5,
+									backgroundColor: colors,
+									data: circle_diagram_mid_data,
+							}]
+					},
+					options: {
+						cutoutPercentage: 75,
+						maintainAspectRatio: false,
+						legend: {
+								display: false
+						}
+					}
+			});
+
+			var ctx_cdc = document.getElementById('circle_diagram_ch').getContext('2d');
+			var chart = new Chart(ctx_cdc, {
+					type: 'doughnut',
+					data: {
+							labels: circle_diagram_labels,
+							datasets: [{
+									borderWidth: .5,
+									backgroundColor: colors,
+									data: circle_diagram_data,
+							}]
+					},
+					options: {
+						cutoutPercentage: 75,
+						maintainAspectRatio: false,
+						legend: {
+								display: false
+						}
+					}
+			});
