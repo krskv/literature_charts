@@ -153,6 +153,10 @@ h1,h2,h3,h4,h5,h6
 h2
 	font-size: 9rem
 	color: $darkblue
+	@include respond-to(tablet)
+		font-size: 7.5rem
+	@include respond-to(small)
+		font-size: 6rem
 
 p
 	margin-top: .5rem
@@ -160,6 +164,21 @@ p
 	line-height: 2.5rem
 	text-align: left
 	font-family: Lora
+	@include respond-to(tablet)
+		font-size: 1.6rem
+		line-height: 2.8rem
+
+
+button
+	&.transparent
+		background-color: transparent
+		+border($black)
+		margin-top: 5rem
+		padding: .7rem 3.5rem
+		&:hover
+			cursor: pointer
+			background-color: $black
+			color: #fff
 
 //FORM STYLE
 input[type="submit"]
