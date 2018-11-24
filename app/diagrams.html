@@ -258,7 +258,11 @@
     <script src="js/chart.min.js"></script>
     <script src="js/diagrams.js"></script>
     <script>
-      var colors = ["#212e58","#3b608e","#5d88bf","#88a2cb","#becadf", "#462556","#efefef","#333333","#ee746a"];
+      //for page "Читання в Україні"
+      var books_colors = ["#212e58","#3b608e","#5d88bf","#88a2cb","#becadf", "#462556","#efefef","#333333","#ee746a"];
+      
+      //for page "Книговидання в Україні"
+      var publisher_colors = ["#00A1AC","#7AC4C9","#C4EBC9","#84C38D","#00618A", "#462556","#EEEFED","#333333","#FECE6D"];
       
       var circle_diagram_data = [19.5,32.2,33.4,10.6,4.3];
       
@@ -282,34 +286,34 @@
       }
       
       var line_data = [
-      	{
-      		title: 'ніколи',
-      		value: 19.5
-      	},
-      	{
-      		title: 'декілька разів на рік',
-      		value: 32.2
-      	},
-      	{
-      		title: 'кілька разів на місяць',
-      		value: 33.4
-      	},
-      	{
-      		title: 'кілька разів на тиждень',
-      		value: 10.6
-      	},
-      	{
-      		title: 'щодня',
-      		value: 4.3
-      	}
+      		{
+      			title: 'ніколи',
+      			value: 19.5
+      		},
+      		{
+      			title: 'декілька разів на рік',
+      			value: 32.2
+      		},
+      		{
+      			title: 'кілька разів на місяць',
+      			value: 33.4
+      		},
+      		{
+      			title: 'кілька разів на тиждень',
+      			value: 10.6
+      		},
+      		{
+      			title: 'щодня',
+      			value: 4.3
+      		}
       ]
       
-      $('#percent_line1').percentLine(line_data);
-      $('#percent_line2').percentLine(line_data);
-      $('#percent_line3').percentLine(line_data);
-      $('#percent_line4').percentLine(line_data);
-      $('#percent_line5').percentLine(line_data);
-      $('#percent_line6').percentLine(line_data);
+      $('#percent_line1').percentLine(line_data,books_colors);
+      $('#percent_line2').percentLine(line_data,books_colors);
+      $('#percent_line3').percentLine(line_data,books_colors);
+      $('#percent_line4').percentLine(line_data,books_colors);
+      $('#percent_line5').percentLine(line_data,books_colors);
+      $('#percent_line6').percentLine(line_data,books_colors);
       
       var ctx_cd = document.getElementById('chart_diagram_ch').getContext('2d');
       var chart = new Chart(ctx_cd, {
@@ -347,7 +351,7 @@
       				labels: circle_diagram_mid_labels,
       				datasets: [{
       						borderWidth: .5,
-      						backgroundColor: colors,
+      						backgroundColor: books_colors,
       						data: circle_diagram_mid_data,
       				}]
       		},
@@ -368,7 +372,7 @@
       				labels: circle_diagram_labels,
       				datasets: [{
       						borderWidth: .5,
-      						backgroundColor: colors,
+      						backgroundColor: books_colors,
       						data: circle_diagram_data,
       				}]
       		},
