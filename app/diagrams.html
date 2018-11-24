@@ -262,7 +262,7 @@
       
       var circle_diagram_data = [19.5,32.2,33.4,10.6,4.3];
       
-      var circle_diagram_labels = ['мені це зовсім нецікаво','інколи хочеться щось почитати','загалом люблю читати','не уявляю свого життя без читання','важко відповісти'];
+      var circle_diagram_labels = ['мені це зовсім нецікаво','інколи хочеться щось почитати','загалом люблю читати','не уявляю свого життябез читання','важко відповісти'];
       
       var circle_diagram_mid_data = [31.3,67.8,0.9];
       
@@ -272,6 +272,14 @@
       
       var chart_diagram_data_1 = [37.1,36.2,14.2,6.4,3.7,1.5,6.6,0.2];
       var chart_diagram_data_2 = [56.4,25.7,6.1,2.7,2.1,0.4,6.9,0.5];
+      
+      var tooltips_config = {
+      	titleFontSize: 14,
+      	titleMarginBottom: 8,
+      	bodyFontSize: 14,
+      	xPadding: 10,
+      	yPadding: 10
+      }
       
       var line_data = [
       	{
@@ -319,6 +327,7 @@
       				}]
       		},
       		options: {
+      			tooltips: tooltips_config,
       			maintainAspectRatio: false,
       			title: {
       				display: true,
@@ -343,6 +352,7 @@
       				}]
       		},
       		options: {
+      			tooltips: tooltips_config,
       			cutoutPercentage: 75,
       			maintainAspectRatio: false,
       			legend: {
@@ -363,6 +373,7 @@
       				}]
       		},
       		options: {
+      			tooltips: tooltips_config,
       			cutoutPercentage: 75,
       			maintainAspectRatio: false,
       			legend: {
