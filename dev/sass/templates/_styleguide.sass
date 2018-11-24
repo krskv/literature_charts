@@ -153,10 +153,13 @@ h1,h2,h3,h4,h5,h6
 h2
 	font-size: 9rem
 	color: $darkblue
+	line-height: 9rem
 	@include respond-to(tablet)
 		font-size: 7.5rem
+		line-height: 7.5rem
 	@include respond-to(small)
 		font-size: 6rem
+		line-height: 6rem
 
 p
 	margin-top: .5rem
@@ -167,6 +170,21 @@ p
 	@include respond-to(tablet)
 		font-size: 1.6rem
 		line-height: 2.8rem
+
+.light_text
+	font-weight: 100
+	font-size: 7.5rem
+	line-height: 9rem
+	font-family: 'SF UI Display'
+	@include respond-to(tablet)
+		font-size: 5rem
+		line-height: 6.8rem
+	@include respond-to(small)
+		font-size: 4rem
+		line-height: 5.8rem
+	@include respond-to(mobil)
+		font-size: 2.4rem
+		line-height: 3.8rem
 
 
 button

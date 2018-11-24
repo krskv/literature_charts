@@ -111,6 +111,7 @@
 	&__logo
 		h2
 			font-size: 2rem
+			line-height: 2rem
 			color: $black
 			text-align: left
 			font-weight: 600
@@ -238,35 +239,16 @@
 		&__list
 			margin-top: 6rem
 			text-align: left
-			li
-				font-weight: 100
-				font-size: 7.5rem
-				line-height: 9rem
-				@include respond-to(tablet)
-					font-size: 5rem
-					line-height: 6.8rem
-				@include respond-to(small)
-					font-size: 4rem
-					line-height: 5.8rem
-				@include respond-to(mobil)
-					font-size: 2.4rem
-					line-height: 3.8rem
 
 #contacts_page
 	.contacts
 		p
 			margin-top: 6rem
 			text-align: center
-			font-size: 7.5rem
-			line-height: 9rem
-			font-family: 'SF UI Display'
-			font-weight: 100
-			@include respond-to(small)
-				font-size: 4rem
-				line-height: 5.5rem
 			a
 				color: #0e275e
 				font-size: 7.5rem
+				line-height: 9rem
 				font-weight: normal
 				color: $darkblue
 				@include respond-to(small)
@@ -274,3 +256,13 @@
 					line-height: 5.5rem
 				&:hover
 					text-decoration: underline
+
+#methodology_page
+	.col
+		margin-top: 6rem
+	.methodology
+	.goal
+		h2
+			text-align: right
+		h3
+			margin: 6rem
