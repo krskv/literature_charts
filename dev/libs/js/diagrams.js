@@ -10,17 +10,8 @@
 		$(this).children('.info_box').remove();
 	});
 
-	$('.mc_diagram').on('click', '.mc_diagram__portrait_item', function() {
-		var that = $(this);
-
-		if(that.hasClass('opened')){
-			that.removeClass('opened');
-			return
-		}
-
-		that.siblings()
-
-		that.addClass('opened');
+	$('.mc_diagram').on('click', '.mc_diagram__accordion_item_control', function() {
+		$(this).parent().toggleClass('opened');
 	});
 
 	$.fn.percentLine = function(line_data,color_theme) {

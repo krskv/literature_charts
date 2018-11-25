@@ -10,15 +10,19 @@
 		$(this).children('.info_box').remove();
 	});
 
-	$('.mc_diagram').on('click', '.mc_diagram__portrait_item', function() {
-		var that = $(this);
+	$('.mc_diagram').on('click', '.mc_diagram__accordion_item_control', function() {
+		var that = $(this).parent();
+		console.log('asdasd');
 
 		if(that.hasClass('opened')){
 			that.removeClass('opened');
 			return
 		}
 
-		that.siblings()
+		var openedSibling = that.siblings('opened');
+
+		if(openedSibling)
+		openedSibling.removeClass('opened');
 
 		that.addClass('opened');
 	});
