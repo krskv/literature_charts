@@ -227,7 +227,9 @@
 		justify-content: flex-start
 		align-items: center
 		img
-			width: 9rems
+			width: 9rem
+			height: 9rem
+			border-radius: 50%
 		.data
 			margin-left: 2rem
 			display: flex
@@ -257,9 +259,11 @@
 		margin-top: 8rem
 		&_item
 			width: 100%
+			overflow: hidden
 			&_control
 				width: 100%
 				height: 3.6rem
+				background-color: #fff
 				cursor: pointer
 				display: flex
 				justify-content: center
@@ -280,7 +284,9 @@
 						background-repeat: no-repeat
 			&_content
 				width: 100%
-				// display: none
+				max-height: 0
+				overflow: hidden
+				transition: max-height 0.3s ease-out
 				table
 					width: 100%
 					border-collapse: collapse
@@ -294,6 +300,15 @@
 						border-bottom: 1px solid $graybg
 						&:nth-child(2)
 							background-color: #f3f3f3
+			&.opened
+				.mc_diagram__accordion_item_content
+					max-height: 1000px
+					transition: max-height 0.5s ease-in
+		&.wide
+			.mc_diagram__accordion_item
+				table
+					td
+						width: 33.33%
 	&__other_wrapper
 		width: 100%
 		height: 50vh
