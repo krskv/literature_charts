@@ -83,7 +83,7 @@
 	// custom formatting example
 	$('.count-number').data('countToOptions', {
 		formatter: function (value, options) {
-			return value.toFixed(1).replace('.',',') + '%';
+			return value.toFixed(1).replace(',','.') + '%';
 		}
 	});
 

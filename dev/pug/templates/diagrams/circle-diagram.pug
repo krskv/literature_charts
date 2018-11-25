@@ -1,0 +1,24 @@
+section#circle_diagram.circle_diagram.diagram
+	h2 2. Чи любите ви читати?
+	.container
+		.row
+			.col-sm-12.col-lg-6.circle_diagram__col
+				table.circle_diagram__info
+					tr
+						th.percent.timer.count-number(style="color: #212e58" data-to="19.5")
+						th.text мені це зовсім нецікаво
+					tr
+						th.percent.timer.count-number(style="color: #3b608e" data-to="32.2")
+						th.text інколи хочеться щось почитати
+					tr
+						th.percent.timer.count-number(style="color: #5d88bf" data-to="33.4")
+						th.text загалом люблю читати
+					tr
+						th.percent.timer.count-number(style="color: #88a2cb" data-to="10.6")
+						th.text не уявляю свого життя без читання
+					tr
+						th.percent.timer.count-number(style="color: #becadf" data-to="4.3")
+						th.text важко відповісти
+			.col-sm-12.col-lg-6.circle_diagram__col
+				.circle_diagram__wrapper
+					canvas( id="circle_diagram_ch")

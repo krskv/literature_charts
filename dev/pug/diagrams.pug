@@ -13,234 +13,17 @@ html(lang="uk")
 							p Aliquip id nisi id nostrud tempor nisi laborum occaecat eu ullamco nostrud excepteur. Dolor et ad dolore aliqua dolore eu excepteur occaecat deserunt ipsum amet amet dolore reprehenderit. Incididunt sit nulla voluptate anim duis velit. Aute deserunt quis ut fugiat reprehenderit laborum eu aliqua.
 							p Velit labore pariatur cillum laborum dolor incididunt duis ea mollit est nulla labore amet. Occaecat proident pariatur dolor laboris dolore exercitation sint eiusmod non. Nulla laborum enim reprehenderit cillum dolor aliquip anim minim fugiat. Sint proident anim nisi qui quis. Magna aliqua minim et ad sint non id commodo laborum.
 
-			section#circle_diagram_mid.circle_diagram_mid.diagram
-				h2 7.1 Чи читаєте ви електронні книжки - книжки з ноутбука/комп'ютера, планшета, смартфона
-				.container
-					.row
-						.col-md-4.col-xs-12.circle_diagram_mid__col
-							table.circle_diagram_mid__info
-								tr
-									th.percent.timer.count-number(style="color: #212e58" data-to="67.8")
-									th.text ні
-								tr
-									th.percent.timer.count-number(style="color: #212e58" data-to="0.9")
-									th.text не відповіли
-						.col-md-4.col-xs-12.circle_diagram_mid__col
-							.circle_diagram_mid__wrapper
-								canvas( id="circle_diagram_mid_ch")
-						.col-md-4.col-xs-12.circle_diagram_mid__col
-							table.circle_diagram_mid__info
-								tr
-									th.percent.timer.count-number(style="color: #212e58" data-to="31.3")
-									th.text так
+			include templates/diagrams/circle-diagram
 
-			section#circle_diagram.circle_diagram.diagram
-				h2 2. Чи любите ви читати?
-				.container
-					.row
-						.col-sm-12.col-lg-6.circle_diagram__col
-							table.circle_diagram__info
-								tr
-									th.percent.timer.count-number(style="color: #212e58" data-to="19.5")
-									th.text мені це зовсім нецікаво
-								tr
-									th.percent.timer.count-number(style="color: #3b608e" data-to="32.2")
-									th.text інколи хочеться щось почитати
-								tr
-									th.percent.timer.count-number(style="color: #5d88bf" data-to="33.4")
-									th.text загалом люблю читати
-								tr
-									th.percent.timer.count-number(style="color: #88a2cb" data-to="10.6")
-									th.text не уявляю свого життя без читання
-								tr
-									th.percent.timer.count-number(style="color: #becadf" data-to="4.3")
-									th.text важко відповісти
-						.col-sm-12.col-lg-6.circle_diagram__col
-							.circle_diagram__wrapper
-								canvas( id="circle_diagram_ch")
+			include templates/diagrams/circle-diagram-mid
 
-			section#line_diagram.line_diagram.diagram
-				h2 1. Як часто ви проводите дозвілля таким чином?
-				.container
-					.row
-						.col-sm-12
-							.line_diagram__wrapper
-								.line_diagram__legend
-									.line_diagram__legend_item
-										.color(style="background-color: #212e58")
-										span.title ніколи
-									.line_diagram__legend_item
-										.color(style="background-color: #3b608e")
-										span.title декілька разів на рік
-									.line_diagram__legend_item
-										.color(style="background-color: #5d88bf")
-										span.title кілька разів на місяць
-									.line_diagram__legend_item
-										.color(style="background-color: #88a2cb")
-										span.title кілька разів на тиждень
-									.line_diagram__legend_item
-										.color(style="background-color: #becadf")
-										span.title щодня
-								.line_diagram__list
-									.line_diagram__list_item
-										img(src="img/gym.svg", alt="icon_name").icon
-										span.title ходжу в кіно / на концерти / на виставки
-										.percent_line#percent_line1
-									.line_diagram__list_item
-										img(src="img/gym.svg", alt="icon_name").icon
-										span.title на природі
-										.percent_line#percent_line2
-									.line_diagram__list_item
-										img(src="img/gym.svg", alt="icon_name").icon
-										span.title на природі
-										.percent_line#percent_line3
-								.line_diagram__list
-									.line_diagram__list_item
-										img(src="img/gym.svg", alt="icon_name").icon
-										span.title на природі
-										.percent_line#percent_line4
-									.line_diagram__list_item
-										img(src="img/gym.svg", alt="icon_name").icon
-										span.title на природі
-										.percent_line#percent_line5
-									.line_diagram__list_item
-										img(src="img/gym.svg", alt="icon_name").icon
-										span.title на природі
-										.percent_line#percent_line6
+			include templates/diagrams/line-diagram
 
-			section#chart_diagram.chart_diagram.diagram
-				h2 4. Скільки друкованних книжок Ви прочитали за останній рік?
-				h3 4.1 А скільки з них було книжок українського видавництва?
-				.container
-					.row
-						.col-12
-							.chart_diagram__wrapper
-								canvas#chart_diagram_ch
+			include templates/diagrams/sides-diagram
 
-			section#sides_diagram.sides_diagram.diagram
-				h3 6.1 Чи були серед придбанних Вами книжок такі, яві Вам не дуже потрібні, але ви купили їх з наступних причин?
-				.container
-					.row
-						.col-sm-12.col-md-8.sides_diagram__wrapper
-								table.sides_diagram__table
-									thead
-										tr
-											th усі
-											th
-											th
-											th ті, хто за останній рік придбали хоча б одну друковану книгу
-									tbody
-										tr
-											td.timer.count-number(data-to="15.7")
-											td.icon
-												img(src="img/gym.svg", alt="placeholder")
-											td на подарунок
-											td.timer.count-number(data-to="13.9")
-										tr
-											td.timer.count-number(data-to="1")
-											td.icon
-												img(src="img/coffee.svg", alt="icon_name")
-											td щоб фінансово підтимати автора
-											td.timer.count-number(data-to="2.6")
-										tr
-											td.timer.count-number(data-to="1.3")
-											td.icon
-												img(src="img/gym.svg", alt="icon_name")
-											td щоб фінансово підтимати видавництво
-											td.timer.count-number(data-to="3.2")
-										tr
-											td.timer.count-number(data-to="20.3")
-											td.icon
-											td нічого з наведенного
-											td.timer.count-number(data-to="50.1")
-										tr
-											td.timer.count-number(data-to="2.3")
-											td.icon
-											td важко відповісти
-											td.timer.count-number(data-to="5.7")
+			include templates/diagrams/chart-diagram
 
-			section#mc_diagram.mc_diagram.diagram
-				h3 4. Кого з сучасних українських письменників ви знаєте і кого читали?
-				.container
-					.row
-						.col-12
-							.mc_diagram__legend
-								.item
-									.color_idicator(style="background: #e46d6d")
-									span.title знають
-								.item
-									.color_idicator(style="background: #6085bf")
-									span.title читають
-						.col-12.col-sm-6.col-lg-4
-							.mc_diagram__portrait_item
-								img(src="img/portrait_ph.png", alt="ph")
-								.data
-									h4.title Ліна Костенко
-									.stat_block
-										.stat_block__line(style="width: 97%;background: #e46d6d")
-										.stat_block__num 9,7 %
-									.stat_block
-										.stat_block__line(style="width: 58%;background: #6085bf")
-										.stat_block__num 5,8 %
-						.col-12.col-sm-6.col-lg-4
-							.mc_diagram__portrait_item
-								img(src="img/portrait_ph.png", alt="ph")
-								.data
-									h4.title Жадан Сергій
-									.stat_block
-										.stat_block__line(style="width: 69%;background: #e46d6d")
-										.stat_block__num 6,9 %
-									.stat_block
-										.stat_block__line(style="width: 39%;background: #6085bf")
-										.stat_block__num 3,9 %
-						.col-12.col-sm-6.col-lg-4
-							.mc_diagram__portrait_item
-								img(src="img/portrait_ph.png", alt="ph")
-								.data
-									h4.title Люко Дашвар(Чернова І.)
-									.stat_block
-										.stat_block__line(style="width: 30%;background: #e46d6d")
-										.stat_block__num 3,0 %
-									.stat_block
-										.stat_block__line(style="width: 23%;background: #6085bf")
-										.stat_block__num 2,3 %
-						.col-12.col-sm-6.col-lg-4
-							.mc_diagram__portrait_item
-								img(src="img/portrait_ph.png", alt="ph")
-								.data
-									h4.title Ліна Костенко
-									.stat_block
-										.stat_block__line(style="width: 97%;background: #e46d6d")
-										.stat_block__num 9,7 %
-									.stat_block
-										.stat_block__line(style="width: 58%;background: #6085bf")
-										.stat_block__num 5,8 %
-						.col-12.col-sm-6.col-lg-4
-							.mc_diagram__portrait_item
-								img(src="img/portrait_ph.png", alt="ph")
-								.data
-									h4.title Ліна Костенко
-									.stat_block
-										.stat_block__line(style="width: 97%;background: #e46d6d")
-										.stat_block__num 9,7 %
-									.stat_block
-										.stat_block__line(style="width: 58%;background: #6085bf")
-										.stat_block__num 5,8 %
-						.col-12.col-sm-6.col-lg-4
-							.mc_diagram__portrait_item
-								img(src="img/portrait_ph.png", alt="ph")
-								.data
-									h4.title Ліна Костенко
-									.stat_block
-										.stat_block__line(style="width: 97%;background: #e46d6d")
-										.stat_block__num 9,7 %
-									.stat_block
-										.stat_block__line(style="width: 58%;background: #6085bf")
-										.stat_block__num 5,8 %
-										.row
-						.col-12
-							.mc_diagram__other_wrapper
-								canvas#mc_diagram__other_ch
+			include templates/diagrams/mc-diagram
 
 		include templates/footer
 
@@ -265,7 +48,7 @@ html(lang="uk")
 
 			var chart_diagram_labels = ['0(жодної)','1-5','6-10','10-25','більше 50','важко відповісти','не відповіли'];
 
-			var mc_diagram_labels = ['Класики укр літератури','Взагалі не читають книжок','Жодного не читали','Важко відповісти','не відповіли'];
+			var mc_diagram_labels = ['Класики української літератури','Взагалі не читають книжок','Жодного не читали','Важко відповісти','не відповіли'];
 
 			var chart_diagram_data_1 = [37.1,36.2,14.2,6.4,3.7,1.5,6.6,0.2];
 			var chart_diagram_data_2 = [56.4,25.7,6.1,2.7,2.1,0.4,6.9,0.5];

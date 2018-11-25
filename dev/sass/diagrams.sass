@@ -252,11 +252,53 @@
 					height: 1.6rem
 				&__num
 					width: 5rem
+	&__accordion
+		width: 100%
+		margin-top: 8rem
+		&_item
+			width: 100%
+			&_control
+				width: 100%
+				height: 3.6rem
+				cursor: pointer
+				display: flex
+				justify-content: center
+				align-items: center
+				border-bottom: 1px solid $graybg
+				.percent_title
+					font-size: 1.6rem
+					position: relative
+					&:after
+						content: ''
+						position: absolute
+						top: calc(50% - 4px)
+						right: -2rem
+						width: 10px
+						background-color: #000
+						height: 8px
+						background: url(../img/accordion-arrow.svg)
+						background-repeat: no-repeat
+			&_content
+				width: 100%
+				// display: none
+				table
+					width: 100%
+					border-collapse: collapse
+					th
+						width: 50%
+						height: 1.5rem
+						border: none
+						border-collapse: collapse
+					td
+						height: 3.6rem
+						border-bottom: 1px solid $graybg
+						&:nth-child(2)
+							background-color: #f3f3f3
 	&__other_wrapper
 		width: 100%
 		height: 50vh
 		min-height: 40rem
-		margin-top: 5rem
+		margin-top: 8rem
 		display: flex
 		justify-content: center
 		align-items: center

@@ -24,6 +24,8 @@ function setVideoHeight() {
   b.height(c);
 }
 
+
+
 //Hamburger toggle
 
 $(".hamburger").click(function(){
