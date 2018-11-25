@@ -132,6 +132,9 @@ section
 	@include respond-to(mobil)
 		padding: 4rem 2rem
 
+.col
+	margin-top: 6rem
+
 ul
 	list-style: none
 	padding-left: 0px
@@ -150,7 +153,7 @@ h1,h2,h3,h4,h5,h6
 	color: $black
 	text-align: left
 
-h2
+h1,h2
 	font-size: 9rem
 	color: $darkblue
 	line-height: 9rem
@@ -162,10 +165,11 @@ h2
 		line-height: 6rem
 
 p
-	margin-top: .5rem
-	font-size: 1.4rem
+	margin: 1.5rem 0
+	font-size: 1.5rem
 	line-height: 2.5rem
-	text-align: left
+	// text-align: left
+	text-align: justify
 	font-family: Lora
 	@include respond-to(tablet)
 		font-size: 1.6rem
