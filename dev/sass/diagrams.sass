@@ -204,3 +204,27 @@
 					color: #ee746a
 					@include respond-to(tablet)
 						font-size: 4rem
+
+.mc_diagram
+	&__legend
+		.item
+			.color_idicator
+			.title
+	&__portrait_item
+		height: 16rem
+		display: flex
+		justify-content: flex-start
+		align-items: center
+		img
+			width: 9rems
+		.data
+			margin-left: 2rem
+			display: flex
+			flex-direction: column
+			justify-content: center
+			align-items: flex-start
+			.title
+				font-size: 1.5rem
+				font-weight: 700
+			.stat_block
+				&_line

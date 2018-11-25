@@ -45,6 +45,17 @@
       </ul>
     </section>
     <article class="page" id="diagrams_page">
+      <section class="formated_text" id="formated_text">
+        <h1>Laborum in eu incididunt</h1>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-sm-10 offset-sm-1 col formated_text">
+              <p>Aliquip id nisi id nostrud tempor nisi laborum occaecat eu ullamco nostrud excepteur. Dolor et ad dolore aliqua dolore eu excepteur occaecat deserunt ipsum amet amet dolore reprehenderit. Incididunt sit nulla voluptate anim duis velit. Aute deserunt quis ut fugiat reprehenderit laborum eu aliqua.</p>
+              <p>Velit labore pariatur cillum laborum dolor incididunt duis ea mollit est nulla labore amet. Occaecat proident pariatur dolor laboris dolore exercitation sint eiusmod non. Nulla laborum enim reprehenderit cillum dolor aliquip anim minim fugiat. Sint proident anim nisi qui quis. Magna aliqua minim et ad sint non id commodo laborum.</p>
+            </div>
+          </div>
+        </div>
+      </section>
       <section class="circle_diagram_mid diagram" id="circle_diagram_mid">
         <h2>7.1 Чи читаєте ви електронні книжки - книжки з ноутбука/комп'ютера, планшета, смартфона</h2>
         <div class="container">
@@ -227,6 +238,81 @@
           </div>
         </div>
       </section>
+      <section class="mc_diagram diagram" id="mc_diagram">
+        <h3>4. Кого з сучасних українських письменників ви знаєте і кого читали?</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div class="mc_diagram__legend">
+                <div class="item">
+                  <div class="color_idicator" style="background: #e46d6d"></div><span class="title">знають</span>
+                </div>
+                <div class="item">
+                  <div class="color_idicator" style="background: #6085bf"></div><span class="title">читають</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="mc_diagram__portrait_item"><img src="img/portrait_ph.png" alt="ph">
+                <div class="data">
+                  <h4 class="title">Ліна Костенко</h4>
+                  <div class="stat_block">
+                    <div class="stat_block_line" style="background: #e46d6d"></div>
+                  </div>
+                  <div class="stat_block">
+                    <div class="stat_block_line" style="background: #6085bf"></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="mc_diagram__portrait_item"><img src="img/portrait_ph.png" alt="ph">
+                <div class="data">
+                  <h4 class="title">Ліна Костенко</h4>
+                  <div class="line" style="background: #e46d6d"></div>
+                  <div class="line" style="background: #6085bf"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="mc_diagram__portrait_item"><img src="img/portrait_ph.png" alt="ph">
+                <div class="data">
+                  <h4 class="title">Ліна Костенко</h4>
+                  <div class="line" style="background: #e46d6d"></div>
+                  <div class="line" style="background: #6085bf"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="mc_diagram__portrait_item"><img src="img/portrait_ph.png" alt="ph">
+                <div class="data">
+                  <h4 class="title">Ліна Костенко</h4>
+                  <div class="line" style="background: #e46d6d"></div>
+                  <div class="line" style="background: #6085bf"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="mc_diagram__portrait_item"><img src="img/portrait_ph.png" alt="ph">
+                <div class="data">
+                  <h4 class="title">Ліна Костенко</h4>
+                  <div class="line" style="background: #e46d6d"></div>
+                  <div class="line" style="background: #6085bf"></div>
+                </div>
+              </div>
+            </div>
+            <div class="col-12 col-sm-4">
+              <div class="mc_diagram__portrait_item"><img src="img/portrait_ph.png" alt="ph">
+                <div class="data">
+                  <h4 class="title">Ліна Костенко</h4>
+                  <div class="line" style="background: #e46d6d"></div>
+                  <div class="line" style="background: #6085bf"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </article>
     <footer>
       <div class="footer_nav__wrapper">
@@ -368,6 +454,27 @@
       var ctx_cdc = document.getElementById('circle_diagram_ch').getContext('2d');
       var chart = new Chart(ctx_cdc, {
       		type: 'doughnut',
+      		data: {
+      				labels: circle_diagram_labels,
+      				datasets: [{
+      						borderWidth: .5,
+      						backgroundColor: books_colors,
+      						data: circle_diagram_data,
+      				}]
+      		},
+      		options: {
+      			tooltips: tooltips_config,
+      			cutoutPercentage: 75,
+      			maintainAspectRatio: false,
+      			legend: {
+      					display: false
+      			}
+      		}
+      });
+      
+      var ctx_cdc = document.getElementById('mc_diagram_ch').getContext('2d');
+      var chart = new Chart(ctx_cdc, {
+      		type: 'bar',
       		data: {
       				labels: circle_diagram_labels,
       				datasets: [{

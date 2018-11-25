@@ -5,6 +5,15 @@ html(lang="uk")
 		include templates/header
 		include templates/breadcrumps
 		article#diagrams_page.page
+		
+			section#formated_text.formated_text
+				h1 Laborum in eu incididunt
+				.container
+					.row
+						.col-12.col-sm-10.offset-sm-1.col.formated_text
+							p Aliquip id nisi id nostrud tempor nisi laborum occaecat eu ullamco nostrud excepteur. Dolor et ad dolore aliqua dolore eu excepteur occaecat deserunt ipsum amet amet dolore reprehenderit. Incididunt sit nulla voluptate anim duis velit. Aute deserunt quis ut fugiat reprehenderit laborum eu aliqua.
+							p Velit labore pariatur cillum laborum dolor incididunt duis ea mollit est nulla labore amet. Occaecat proident pariatur dolor laboris dolore exercitation sint eiusmod non. Nulla laborum enim reprehenderit cillum dolor aliquip anim minim fugiat. Sint proident anim nisi qui quis. Magna aliqua minim et ad sint non id commodo laborum.
+
 			section#circle_diagram_mid.circle_diagram_mid.diagram
 				h2 7.1 Чи читаєте ви електронні книжки - книжки з ноутбука/комп'ютера, планшета, смартфона
 				.container
@@ -150,6 +159,62 @@ html(lang="uk")
 											td.icon
 											td важко відповісти
 											td.timer.count-number(data-to="5.7")
+			section#mc_diagram.mc_diagram.diagram
+				h3 4. Кого з сучасних українських письменників ви знаєте і кого читали?
+				.container
+					.row
+						.col-12
+							.mc_diagram__legend
+								.item
+									.color_idicator(style="background: #e46d6d")
+									span.title знають
+								.item
+									.color_idicator(style="background: #6085bf")
+									span.title читають
+						.col-12.col-sm-4
+							.mc_diagram__portrait_item
+								img(src="img/portrait_ph.png", alt="ph")
+								.data
+									h4.title Ліна Костенко
+									.stat_block
+										.stat_block_line(style="background: #e46d6d")
+									.stat_block
+										.stat_block_line(style="background: #6085bf")
+						.col-12.col-sm-4
+							.mc_diagram__portrait_item
+								img(src="img/portrait_ph.png", alt="ph")
+								.data
+									h4.title Ліна Костенко
+									.line(style="background: #e46d6d")
+									.line(style="background: #6085bf")
+						.col-12.col-sm-4
+							.mc_diagram__portrait_item
+								img(src="img/portrait_ph.png", alt="ph")
+								.data
+									h4.title Ліна Костенко
+									.line(style="background: #e46d6d")
+									.line(style="background: #6085bf")
+						.col-12.col-sm-4
+							.mc_diagram__portrait_item
+								img(src="img/portrait_ph.png", alt="ph")
+								.data
+									h4.title Ліна Костенко
+									.line(style="background: #e46d6d")
+									.line(style="background: #6085bf")
+						.col-12.col-sm-4
+							.mc_diagram__portrait_item
+								img(src="img/portrait_ph.png", alt="ph")
+								.data
+									h4.title Ліна Костенко
+									.line(style="background: #e46d6d")
+									.line(style="background: #6085bf")
+						.col-12.col-sm-4
+							.mc_diagram__portrait_item
+								img(src="img/portrait_ph.png", alt="ph")
+								.data
+									h4.title Ліна Костенко
+									.line(style="background: #e46d6d")
+									.line(style="background: #6085bf")
 
 		include templates/footer
 
@@ -268,6 +333,27 @@ html(lang="uk")
 			var ctx_cdc = document.getElementById('circle_diagram_ch').getContext('2d');
 			var chart = new Chart(ctx_cdc, {
 					type: 'doughnut',
+					data: {
+							labels: circle_diagram_labels,
+							datasets: [{
+									borderWidth: .5,
+									backgroundColor: books_colors,
+									data: circle_diagram_data,
+							}]
+					},
+					options: {
+						tooltips: tooltips_config,
+						cutoutPercentage: 75,
+						maintainAspectRatio: false,
+						legend: {
+								display: false
+						}
+					}
+			});
+
+			var ctx_cdc = document.getElementById('mc_diagram_ch').getContext('2d');
+			var chart = new Chart(ctx_cdc, {
+					type: 'bar',
 					data: {
 							labels: circle_diagram_labels,
 							datasets: [{
