@@ -9,7 +9,7 @@ html(lang="uk")
 				h1 Laborum in eu incididunt
 				.container
 					.row
-						.col-12.col-sm-10.offset-sm-1.col.formated_text
+						.col-12.col-sm-8.offset-sm-2.col.formated_text
 							p Aliquip id nisi id nostrud tempor nisi laborum occaecat eu ullamco nostrud excepteur. Dolor et ad dolore aliqua dolore eu excepteur occaecat deserunt ipsum amet amet dolore reprehenderit. Incididunt sit nulla voluptate anim duis velit. Aute deserunt quis ut fugiat reprehenderit laborum eu aliqua.
 							p Velit labore pariatur cillum laborum dolor incididunt duis ea mollit est nulla labore amet. Occaecat proident pariatur dolor laboris dolore exercitation sint eiusmod non. Nulla laborum enim reprehenderit cillum dolor aliquip anim minim fugiat. Sint proident anim nisi qui quis. Magna aliqua minim et ad sint non id commodo laborum.
 
@@ -30,6 +30,12 @@ html(lang="uk")
 			section#cuts_diagram.cuts_diagram.diagram
 				h2 4. Скільки друкованних книжок Ви прочитали за останній рік?
 				.container
+					.row
+						.col-12
+							ul.wave_diagram__badges
+								li(style="border-color: #00A1AC; color: #00A1AC") 8,5% не маємо виключних майнових прав
+								li(style="border-color: #7AC4C9; color: #7AC4C9") 8,5% не маємо виключних майнових прав
+								li(style="border-color: #C4EBC9; color: #C4EBC9") 8,5% не маємо виключних майнових прав
 					.row
 						.col-12
 							.cuts_diagram__wrapper
@@ -111,16 +117,16 @@ html(lang="uk")
 			var ctx_cud = document.getElementById('cuts_diagram_ch').getContext('2d');
 			var chart = new Chart(ctx_cud, {
 					type: 'horizontalBar',
-					//- type: 'line',
+					type: 'line',
 					data: {
-							xLabels: cut_diagram_labels,
+							//- xLabels: cut_diagram_labels,
 							//- yLabels: cut_diagram_metric,
 							datasets: [
 								{
 									label: cut_diagram_metric[0],
 									backgroundColor: publisher_colors[0],
-									data: cut_diagram_labels
-								},
+									data: [cut_diagram_labels[1]]
+								}
 								//- {
 								//- 	label: cut_diagram_metric[1],
 								//- 	backgroundColor: publisher_colors[1],
@@ -155,12 +161,18 @@ html(lang="uk")
 							xAxes: [{
 									type: 'category',
 									stacked: true,
+									labels: cut_diagram_labels,
 									ticks: {
 										callback: function(value,index,cut_diagram_labels) {
 											return value;
 										}
 									}
 							}],
+							yAxes: [{
+									type: 'category',
+									stacked: true,
+									labels: cut_diagram_metric
+							}]
 						},
 						title: {
 							display: true,
