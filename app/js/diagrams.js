@@ -11,20 +11,7 @@
 	});
 
 	$('.mc_diagram').on('click', '.mc_diagram__accordion_item_control', function() {
-		var that = $(this).parent();
-		console.log('asdasd');
-
-		if(that.hasClass('opened')){
-			that.removeClass('opened');
-			return
-		}
-
-		var openedSibling = that.siblings('opened');
-
-		if(openedSibling)
-		openedSibling.removeClass('opened');
-
-		that.addClass('opened');
+		$(this).parent().toggleClass('opened');
 	});
 
 	$.fn.percentLine = function(line_data,color_theme) {

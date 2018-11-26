@@ -559,6 +559,27 @@
           </div>
         </div>
       </section>
+      <section class="mc_diagram diagram" id="mc_diagram">
+        <h3>4. Кого з сучасних українських письменників ви знаєте і кого читали?</h3>
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <ul class="wave_diagram__badges">
+                <li style="border-color: #00A1AC; color: #00A1AC">8,5% не маємо виключних майнових прав</li>
+                <li style="border-color: #7AC4C9; color: #7AC4C9">8,5% не маємо виключних майнових прав</li>
+                <li style="border-color: #C4EBC9; color: #C4EBC9">8,5% не маємо виключних майнових прав</li>
+              </ul>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-12">
+              <div class="wave_diagram__wrapper">
+                <canvas id="wave_diagram_ch"></canvas>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
     </article>
     <footer>
       <div class="footer_nav__wrapper">
@@ -750,6 +771,124 @@
       			}
       		}
       });
+      
+      //- var publisher_colors = ["#00A1AC","#7AC4C9","#C4EBC9","#84C38D","#00618A", "#462556","#EEEFED","#333333","#FECE6D"];
+      var wave_diagrams_percent_labels = ['0','10','25','50','75','100']
+      
+      var ctx_wd = document.getElementById('wave_diagram_ch').getContext('2d');
+      var chart = new Chart(ctx_wd, {
+      		type: 'line',
+      		data: {
+      			//- labels: wave_diagrams_percent_labels,
+      			datasets: [
+      				{
+      					label: "Название 1",
+      					fill: 'bottom',
+      					borderColor: publisher_colors[0],
+      					backgroundColor: publisher_colors[0],
+      					data: [
+      						{
+      							x: 0,
+      							y: 0
+      						},
+      						{
+      							x: 10,
+      							y: 7.5
+      						},
+      					]
+      				}, {
+      					label: "Название 2",
+      					fill: 'bottom',
+      					borderColor: publisher_colors[1],
+      					backgroundColor: publisher_colors[1],
+      					data: [
+      						{
+      							x: 0,
+      							y: 0
+      						},
+      						{
+      							x: 25,
+      							y: 3.8
+      						},
+      					]
+      				},
+      				{
+      					label: "Название 3",
+      					fill: 'bottom',
+      					borderColor: publisher_colors[2],
+      					backgroundColor: publisher_colors[2],
+      					data: [
+      						{
+      							x: 0,
+      							y: 0
+      						},
+      						{
+      							x: 50,
+      							y: 9.4
+      						},
+      					]
+      				},
+      				{
+      					label: "Название 4",
+      					fill: 'bottom',
+      					borderColor: publisher_colors[3],
+      					backgroundColor: publisher_colors[3],
+      					data: [
+      						{
+      							x: 0,
+      							y: 0
+      						},
+      						{
+      							x: 75,
+      							y: 16
+      						},
+      					]
+      				},
+      				{
+      					label: "Название 5",
+      					fill: 'bottom',
+      					borderColor: publisher_colors[4],
+      					backgroundColor: publisher_colors[4],
+      					data: [
+      						{
+      							x: 0,
+      							y: 0
+      						},
+      						{
+      							x: 95,
+      							y: 54.7
+      						},
+      					]
+      				},
+      			]
+      		},
+      		options: {
+      			tooltips: tooltips_config,
+      			maintainAspectRatio: false,
+      			scales: {
+      				xAxes: [{
+      						type: 'linear',
+      						ticks: {
+      								min: 0,
+      								max: 100,
+      								stepSize: 5
+      						}
+      				}],
+      				//- yAxes: [{
+      				//- 		type: 'linear',
+      				//- 		ticks: {
+      				//- 				min: 0,
+      				//- 				max: 100,
+      				//- 				stepSize: 10
+      				//- 		}
+      				//- }],
+      			},
+      			legend: {
+      					display: false
+      			}
+      		}
+      });
+      
     </script>
   </body>
 </html>
