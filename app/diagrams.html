@@ -49,6 +49,18 @@
         <h1>Laborum in eu incididunt</h1>
         <div class="container">
           <div class="row">
+            <div class="col-12 col">
+              <div id="diagram_nav">
+                <h3>Зміст:</h3>
+                <ul>
+                  <li><a href="#circle_diagram">1. Чи були серед придбаних вами книжок такі, які вам не дуже потрібні, але ви купили їх з наведених причин?</a></li>
+                  <li><a href="#circle_diagram_mid">2. Скільки друкованних книжок Ви прочитали за останній рік?</a></li>
+                  <li><a href="#chart_diagram">3. Скільки друкованних книжок Ви прочитали за останній рік?</a></li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="row">
             <div class="col-12 col-sm-8 offset-sm-2 col formated_text">
               <p>Aliquip id nisi id nostrud tempor nisi laborum occaecat eu ullamco nostrud excepteur. Dolor et ad dolore aliqua dolore eu excepteur occaecat deserunt ipsum amet amet dolore reprehenderit. Incididunt sit nulla voluptate anim duis velit. Aute deserunt quis ut fugiat reprehenderit laborum eu aliqua.</p>
               <p>Velit labore pariatur cillum laborum dolor incididunt duis ea mollit est nulla labore amet. Occaecat proident pariatur dolor laboris dolore exercitation sint eiusmod non. Nulla laborum enim reprehenderit cillum dolor aliquip anim minim fugiat. Sint proident anim nisi qui quis. Magna aliqua minim et ad sint non id commodo laborum.</p>
@@ -618,8 +630,7 @@
       <div class="footer_partners__wrapper">
         <div class="footer_partners">
           <div class="footer_partners_item"><img src="img/ucf_logo_ua_full.svg" alt="ucf_logo"></div>
-          <div class="footer_partners_item"><img src="img/gut.svg" alt="gutenbergz_logo"></div>
-          <div class="footer_partners_item"><img src="img/Logo_chytomo.svg" alt="chytomo_logo"></div>
+          <div class="footer_partners_item"><img src="img/gut.svg" alt="gutenbergz_logo"><img src="img/Logo_chytomo.svg" alt="chytomo_logo"></div>
         </div>
       </div>
       <div class="footer_goback" id="scroll-top"><a href="#top-scroll" title="Давай почнемо все спочатку"><span>Давай почнемо все спочатку</span>
@@ -700,11 +711,10 @@
       
       var ctx_cud = document.getElementById('cuts_diagram_ch').getContext('2d');
       var chart = new Chart(ctx_cud, {
-      		type: 'horizontalBar',
+      		type: 'bar',
       		type: 'line',
       		data: {
-      				//- xLabels: cut_diagram_labels,
-      				//- yLabels: cut_diagram_metric,
+      				xLabels: cut_diagram_labels,
       				datasets: [
       					{
       						label: cut_diagram_metric[0],

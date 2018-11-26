@@ -25,16 +25,25 @@ footer
 		padding: 1rem 3.3rem
 		background-color: $graybg
 		.footer_partners
+			width: 100%
 			display: flex
-			justify-content: center
+			justify-content: space-between
 			align-items: center
+			padding: 2rem 0
 			&_item
-				width: 15rem
-				margin: 0 3rem
+				margin: 0
+				display: flex
+				align-items: center
+				justify-content: center
+				&:nth-child(1)
+					img
+						width: 20rem
 				&:nth-child(2)
-					width: 25rem
-				img
-					width: 100%
+					display: inline-block
+					img
+						margin: 0 2rem
+						width: 18rem
+						display: inline-block
 	.footer_goback#scroll-top
 		padding: .5rem 2rem
 		background-color: $black
