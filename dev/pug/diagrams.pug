@@ -27,6 +27,14 @@ html(lang="uk")
 
 			include templates/diagrams/wave-diagram
 
+			section#cuts_diagram.cuts_diagram.diagram
+				h2 4. Скільки друкованних книжок Ви прочитали за останній рік?
+				.container
+					.row
+						.col-12
+							.cuts_diagram__wrapper
+								canvas#cuts_diagram_ch
+
 		include templates/footer
 
 		script(src="js/number-counter.js")
@@ -95,6 +103,74 @@ html(lang="uk")
 			$('#percent_line4').percentLine(line_data,books_colors);
 			$('#percent_line5').percentLine(line_data,books_colors);
 			$('#percent_line6').percentLine(line_data,books_colors);
+
+			var cut_diagram_labels = ['0','20','100','500','1000','3000','>3000'];
+
+			var cut_diagram_metric = ['47,2%','28,3%','6,6%','0,9%','0,9%','0,1%'];
+
+			var ctx_cud = document.getElementById('cuts_diagram_ch').getContext('2d');
+			var chart = new Chart(ctx_cud, {
+					type: 'horizontalBar',
+					//- type: 'line',
+					data: {
+							xLabels: cut_diagram_labels,
+							//- yLabels: cut_diagram_metric,
+							datasets: [
+								{
+									label: cut_diagram_metric[0],
+									backgroundColor: publisher_colors[0],
+									data: cut_diagram_labels
+								},
+								//- {
+								//- 	label: cut_diagram_metric[1],
+								//- 	backgroundColor: publisher_colors[1],
+								//- 	data: ['100']
+								//- },
+								//- {
+								//- 	label: cut_diagram_metric[2],
+								//- 	backgroundColor: publisher_colors[2],
+								//- 	data: ['500']
+								//- },
+								//- {
+								//- 	label: cut_diagram_metric[3],
+								//- 	backgroundColor: publisher_colors[3],
+								//- 	data: ['1000']
+								//- },
+								//- {
+								//- 	label: cut_diagram_metric[4],
+								//- 	backgroundColor: publisher_colors[4],
+								//- 	data: ['3000']
+								//- },
+								//- {
+								//- 	label: cut_diagram_metric[4],
+								//- 	backgroundColor: publisher_colors[4],
+								//- 	data: ['більше 3000']
+								//- },
+							]
+					},
+					options: {
+						tooltips: tooltips_config,
+						maintainAspectRatio: false,
+						scales: {
+							xAxes: [{
+									type: 'category',
+									stacked: true,
+									ticks: {
+										callback: function(value,index,cut_diagram_labels) {
+											return value;
+										}
+									}
+							}],
+						},
+						title: {
+							display: true,
+							text: 'кількість книжок'
+						},
+						legend: {
+								display: false,
+						}
+					}
+			});
 
 			var ctx_cd = document.getElementById('chart_diagram_ch').getContext('2d');
 			var chart = new Chart(ctx_cd, {
@@ -195,7 +271,6 @@ html(lang="uk")
 					}
 			});
 
-			//- var publisher_colors = ["#00A1AC","#7AC4C9","#C4EBC9","#84C38D","#00618A", "#462556","#EEEFED","#333333","#FECE6D"];
 			var wave_diagrams_percent_labels = ['0','10','25','50','75','100']
 
 			var ctx_wd = document.getElementById('wave_diagram_ch').getContext('2d');
@@ -297,115 +372,9 @@ html(lang="uk")
 											stepSize: 5
 									}
 							}],
-							//- yAxes: [{
-							//- 		type: 'linear',
-							//- 		ticks: {
-							//- 				min: 0,
-							//- 				max: 100,
-							//- 				stepSize: 10
-							//- 		}
-							//- }],
 						},
 						legend: {
 								display: false
 						}
 					}
 			});
-
-		//- var timeFormat = 'MM/DD/YYYY HH:mm';
-
-		//- function newDate(days) {
-		//- 	return moment().add(days, 'd').toDate();
-		//- }
-
-		//- function newDateString(days) {
-		//- 	return moment().add(days, 'd').format(timeFormat);
-		//- }
-
-		//- var color = Chart.helpers.color;
-		//- var config = {
-		//- 	type: 'line',
-		//- 	data: {
-		//- 		labels: [ // Date Objects
-		//- 			newDate(0),
-		//- 			newDate(1),
-		//- 			newDate(2),
-		//- 			newDate(3),
-		//- 			newDate(4),
-		//- 			newDate(5),
-		//- 			newDate(6)
-		//- 		],
-		//- 		datasets: [{
-		//- 			label: 'My First dataset',
-		//- 			backgroundColor: color(window.chartColors.red).alpha(0.5).rgbString(),
-		//- 			borderColor: window.chartColors.red,
-		//- 			fill: false,
-		//- 			data: [
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor()
-		//- 			],
-		//- 		}, {
-		//- 			label: 'My Second dataset',
-		//- 			backgroundColor: color(window.chartColors.blue).alpha(0.5).rgbString(),
-		//- 			borderColor: window.chartColors.blue,
-		//- 			fill: false,
-		//- 			data: [
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor(),
-		//- 				randomScalingFactor()
-		//- 			],
-		//- 		}, {
-		//- 			label: 'Dataset with point data',
-		//- 			backgroundColor: color(window.chartColors.green).alpha(0.5).rgbString(),
-		//- 			borderColor: window.chartColors.green,
-		//- 			fill: false,
-		//- 			data: [{
-		//- 				x: newDateString(0),
-		//- 				y: randomScalingFactor()
-		//- 			}, {
-		//- 				x: newDateString(5),
-		//- 				y: randomScalingFactor()
-		//- 			}, {
-		//- 				x: newDateString(7),
-		//- 				y: randomScalingFactor()
-		//- 			}, {
-		//- 				x: newDateString(15),
-		//- 				y: randomScalingFactor()
-		//- 			}],
-		//- 		}]
-		//- 	},
-		//- 	options: {
-		//- 		title: {
-		//- 			text: 'Chart.js Time Scale'
-		//- 		},
-		//- 		scales: {
-		//- 			xAxes: [{
-		//- 				type: 'time',
-		//- 				time: {
-		//- 					format: timeFormat,
-		//- 					// round: 'day'
-		//- 					tooltipFormat: 'll HH:mm'
-		//- 				},
-		//- 				scaleLabel: {
-		//- 					display: true,
-		//- 					labelString: 'Date'
-		//- 				}
-		//- 			}],
-		//- 			yAxes: [{
-		//- 				scaleLabel: {
-		//- 					display: true,
-		//- 					labelString: 'value'
-		//- 				}
-		//- 			}]
-		//- 		},
-		//- 	}
-		//- };
