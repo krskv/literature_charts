@@ -597,7 +597,7 @@
         <div class="container">
           <div class="row">
             <div class="col-12">
-              <ul class="wave_diagram__badges">
+              <ul class="cuts_diagram__badges">
                 <li style="border-color: #00A1AC; color: #00A1AC">8,5% не маємо виключних майнових прав</li>
                 <li style="border-color: #7AC4C9; color: #7AC4C9">8,5% не маємо виключних майнових прав</li>
                 <li style="border-color: #C4EBC9; color: #C4EBC9">8,5% не маємо виключних майнових прав</li>
@@ -705,9 +705,10 @@
       $('#percent_line5').percentLine(line_data,books_colors);
       $('#percent_line6').percentLine(line_data,books_colors);
       
-      var cut_diagram_labels = ['0','20','100','500','1000','3000','>3000'];
+      var cut_diagram_labels = ['20','100','500','1000','3000','>3000'];
       
-      var cut_diagram_metric = ['47,2%','28,3%','6,6%','0,9%','0,9%','0,1%'];
+      //- var cut_diagram_metric = ['47,2%','28,3%','6,6%','0,9%','0,9%','0,1%'];
+      var cut_diagram_metric = [47.2,28.3,6.6,0.9,0.9,0.1];
       
       var ctx_cud = document.getElementById('cuts_diagram_ch').getContext('2d');
       var chart = new Chart(ctx_cud, {
@@ -716,35 +717,9 @@
       				xLabels: cut_diagram_labels,
       				datasets: [
       					{
-      						label: cut_diagram_metric[0],
-      						backgroundColor: publisher_colors[0],
-      						data: [cut_diagram_labels[0]]
+      						backgroundColor: publisher_colors,
+      						data: cut_diagram_metric
       					},
-      					{
-      						label: cut_diagram_metric[1],
-      						backgroundColor: publisher_colors[1],
-      						data: ['100']
-      					},
-      					{
-      						label: cut_diagram_metric[2],
-      						backgroundColor: publisher_colors[2],
-      						data: ['500']
-      					},
-      					//- {
-      					//- 	label: cut_diagram_metric[3],
-      					//- 	backgroundColor: publisher_colors[3],
-      					//- 	data: ['1000']
-      					//- },
-      					//- {
-      					//- 	label: cut_diagram_metric[4],
-      					//- 	backgroundColor: publisher_colors[4],
-      					//- 	data: ['3000']
-      					//- },
-      					//- {
-      					//- 	label: cut_diagram_metric[4],
-      					//- 	backgroundColor: publisher_colors[4],
-      					//- 	data: ['більше 3000']
-      					//- },
       				]
       		},
       		options: {
@@ -752,7 +727,16 @@
       			maintainAspectRatio: false,
       			scales: {
       				yAxes: [{
-      						type: 'category',
+      					scaleLabel:{
+      						display: true,
+      						labelString: '%'
+      					}
+      				}],
+      				xAxes: [{
+      					scaleLabel:{
+      						display: true,
+      						labelString: 'кількість'
+      					}
       				}]
       			},
       			title: {
@@ -790,6 +774,20 @@
       			legend: {
       					display: true,
       					position: 'bottom',
+      			},
+      			scales: {
+      				yAxes: [{
+      					scaleLabel:{
+      						display: true,
+      						labelString: '%'
+      					}
+      				}],
+      				xAxes: [{
+      					scaleLabel:{
+      						display: true,
+      						labelString: 'якась назва'
+      					}
+      				}]
       			}
       		}
       });
@@ -860,7 +858,15 @@
       			},
       			legend: {
       					display: false
-      			}
+      			},
+      			scales: {
+      				yAxes: [{
+      					scaleLabel:{
+      						display: true,
+      						labelString: '%'
+      					}
+      				}]
+      			},
       		}
       });
       
