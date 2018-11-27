@@ -38,19 +38,9 @@ html(lang="uk")
 
 			include templates/diagrams/wave-diagram
 
-			section#cuts_diagram.cuts_diagram.diagram
-				h2 4. Скільки друкованних книжок Ви прочитали за останній рік?
-				.container
-					.row
-						.col-12
-							ul.cuts_diagram__badges
-								li(style="border-color: #00A1AC; color: #00A1AC") 8,5% не маємо виключних майнових прав
-								li(style="border-color: #7AC4C9; color: #7AC4C9") 8,5% не маємо виключних майнових прав
-								li(style="border-color: #C4EBC9; color: #C4EBC9") 8,5% не маємо виключних майнових прав
-					.row
-						.col-12
-							.cuts_diagram__wrapper
-								canvas#cuts_diagram_ch
+			include templates/diagrams/cuts-diagram
+
+			include templates/diagrams/balls-diagram
 
 		include templates/footer
 
@@ -393,3 +383,40 @@ html(lang="uk")
 						}
 					}
 			});
+
+			var balls_diagram= [
+				{
+					label: 'завдяки особистому знайомству з автором',
+					value: 67
+				},
+				{
+					label: 'за рекомендаціями експертів, знайомих',
+					value: 65.1
+				},
+				{
+					label: 'після звернення автора до видавництва електронною поштою',
+					value: 56.6
+				},
+				{
+					label: 'після моніторингу ЗМІ, сайтів, соцмереж',
+					value: 30.2
+				},
+				{
+					label: 'завдяки конкурсам',
+					value: 17.9
+				},
+				{
+					label: 'не працює з українськими авторами',
+					value: 4.7
+				},
+				{
+					label: 'через літшколи і курси',
+					value: 3.8
+				},
+				{
+					label: 'інше',
+					value: 0.9
+				}
+			];
+
+			$('#balls_diagram_ch').ballsDiagram(balls_diagram,publisher_colors);

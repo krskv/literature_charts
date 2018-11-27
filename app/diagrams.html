@@ -613,6 +613,16 @@
           </div>
         </div>
       </section>
+      <section class="balls_diagram diagram" id="balls_diagram">
+        <h2>4. Скільки друкованних книжок Ви прочитали за останній рік?</h2>
+        <div class="container">
+          <div class="row">
+            <div class="col-12 col-lg-8 col-sm-10 offset-lg-2 offset-sm-1">
+              <div class="balls_diagram__wrapper" id="balls_diagram_ch"></div>
+            </div>
+          </div>
+        </div>
+      </section>
     </article>
     <footer>
       <div class="footer_nav__wrapper">
@@ -977,6 +987,43 @@
       			}
       		}
       });
+      
+      var balls_diagram= [
+      	{
+      		label: 'завдяки особистому знайомству з автором',
+      		value: 67
+      	},
+      	{
+      		label: 'за рекомендаціями експертів, знайомих',
+      		value: 65.1
+      	},
+      	{
+      		label: 'після звернення автора до видавництва електронною поштою',
+      		value: 56.6
+      	},
+      	{
+      		label: 'після моніторингу ЗМІ, сайтів, соцмереж',
+      		value: 30.2
+      	},
+      	{
+      		label: 'завдяки конкурсам',
+      		value: 17.9
+      	},
+      	{
+      		label: 'не працює з українськими авторами',
+      		value: 4.7
+      	},
+      	{
+      		label: 'через літшколи і курси',
+      		value: 3.8
+      	},
+      	{
+      		label: 'інше',
+      		value: 0.9
+      	}
+      ];
+      
+      $('#balls_diagram_ch').ballsDiagram(balls_diagram,publisher_colors);
     </script>
   </body>
 </html>
