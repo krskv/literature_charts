@@ -712,25 +712,24 @@
       var ctx_cud = document.getElementById('cuts_diagram_ch').getContext('2d');
       var chart = new Chart(ctx_cud, {
       		type: 'bar',
-      		type: 'line',
       		data: {
       				xLabels: cut_diagram_labels,
       				datasets: [
       					{
       						label: cut_diagram_metric[0],
       						backgroundColor: publisher_colors[0],
-      						data: [cut_diagram_labels[1]]
-      					}
-      					//- {
-      					//- 	label: cut_diagram_metric[1],
-      					//- 	backgroundColor: publisher_colors[1],
-      					//- 	data: ['100']
-      					//- },
-      					//- {
-      					//- 	label: cut_diagram_metric[2],
-      					//- 	backgroundColor: publisher_colors[2],
-      					//- 	data: ['500']
-      					//- },
+      						data: [cut_diagram_labels[0]]
+      					},
+      					{
+      						label: cut_diagram_metric[1],
+      						backgroundColor: publisher_colors[1],
+      						data: ['100']
+      					},
+      					{
+      						label: cut_diagram_metric[2],
+      						backgroundColor: publisher_colors[2],
+      						data: ['500']
+      					},
       					//- {
       					//- 	label: cut_diagram_metric[3],
       					//- 	backgroundColor: publisher_colors[3],
@@ -752,20 +751,8 @@
       			tooltips: tooltips_config,
       			maintainAspectRatio: false,
       			scales: {
-      				xAxes: [{
-      						type: 'category',
-      						stacked: true,
-      						labels: cut_diagram_labels,
-      						ticks: {
-      							callback: function(value,index,cut_diagram_labels) {
-      								return value;
-      							}
-      						}
-      				}],
       				yAxes: [{
       						type: 'category',
-      						stacked: true,
-      						labels: cut_diagram_metric
       				}]
       			},
       			title: {
