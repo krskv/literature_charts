@@ -192,18 +192,6 @@ p
 		font-size: 2.4rem
 		line-height: 3.8rem
 
-
-button
-	&.transparent
-		background-color: transparent
-		+border($black)
-		margin-top: 5rem
-		padding: .7rem 3.5rem
-		&:hover
-			cursor: pointer
-			background-color: $black
-			color: #fff
-
 .formated_text
 	p
 		font-size: 1.9rem
@@ -244,6 +232,24 @@ button
 	h5,h6
 		font-size: 2rem
 		line-height: 2.2rem
+
+.button_wrapper
+	margin-top: 5rem
+	display: inline-block
+
+button,a
+	&.transparent
+		background-color: transparent
+		+border($black)
+		text-align: center
+		margin-top: 5rem
+		padding: .7rem 3.5rem
+		&:hover
+			cursor: pointer
+			background-color: $black
+			color: #fff
+			font-style: normal
+
 //FORM STYLE
 input[type="submit"]
 
