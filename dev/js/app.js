@@ -42,6 +42,13 @@ var scroll = new SmoothScroll('a[href*="#"]', {
 });
 
 window.onload = function () {
-   document.querySelector('#loader_screen').className = 'ontop';
-   document.querySelector('.main_header').className += ' animated';
-  }
+
+  var loader_screen = document.querySelector('#loader_screen');
+  var main_header =  document.querySelector('.main_header');
+
+  if (loader_screen)
+    loader_screen.className = 'ontop'
+  if (main_header)
+    main_header.className += ' animated';
+
+}
