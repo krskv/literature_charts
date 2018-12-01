@@ -1,6 +1,4 @@
 (function() {
-  $( document ).ready(function() {
-  });
 
    $(window).scroll(function() {
 		var win = $(window);
@@ -14,6 +12,7 @@
   $(window).resize(function() {
   });
 
+  new WOW().init();
 
 function setVideoHeight() {
   var a = $( '#main-video-box' );
@@ -41,3 +40,8 @@ var scroll = new SmoothScroll('a[href*="#"]', {
   speed: 1000, // Integer. How fast to complete the scroll in milliseconds
   easing: 'easeInOutCubic' // Easing pattern to use
 });
+
+window.onload = function () {
+   document.querySelector('#loader_screen').className = 'ontop';
+   document.querySelector('.main_header').className += ' animated';
+  }

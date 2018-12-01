@@ -1,6 +1,18 @@
 @import "../templates/_vars.sass"
 @import "../templates/_styleguide.sass"
 
+#loader_screen
+	position: fixed
+	top: 0
+	left: 0
+	z-index: 9999
+	width: 100%
+	height: 100%
+	background-color: #462556
+	transition: top .5s ease-out .1s
+	&.ontop
+		top: -100%
+
 #breadcrumps
 	padding: .6rem 8rem 0 10rem
 	text-align: left
@@ -144,12 +156,18 @@
 			display: block
 	&__lang
 		align-items: flex-start
+		opacity: 0
+		transition: opacity .4s ease-out 2.3s
 	&__nav
 		display: inline-flex
 		flex-direction: column
 		justify-content: flex-start
 		nav
 			margin-top: 8.5rem
+			position: relative
+			left: -100%
+			opacity: 0
+			transition: opacity .6s ease-out 2.3s, left .6s ease-out 1.9s
 			@include respond-to(tablet)
 				display: none
 			ul
@@ -162,11 +180,26 @@
 						display: none
 	&__logo
 		width: 80rem
+		position: relative
+		overflow: hidden
+		&:after
+			content: ""
+			display: block
+			width: 0
+			height: 100%
+			background-color: #5d88bf
+			opacity: 1
+			position: absolute
+			top: 0
+			left: 0
+			transition: left .6s ease-out 1.7s,width  .6s ease-out 1.1s
 		@include respond-to(tablet)
 			width: auto
 		h1
 			text-align: left
 			font-size: 9rem
+			opacity: 0
+			transition: opacity .3s ease-out 1.7s
 			line-height: 9rem
 			color: $darkblue
 			@include respond-to(tablet)
@@ -174,6 +207,18 @@
 				line-height: 2.1rem
 				color: $black
 				font-weight: 600
+	&.animated
+		.main_header__logo
+			&:after
+				left: 100%
+				width: 100%
+			h1
+				opacity: 1
+		nav
+			opacity: 1
+			left: 0
+		.main_header__lang
+			opacity: 1
 	&.minified
 		min-height: 8rem
 		position: fixed
@@ -218,7 +263,7 @@
 				h2
 					text-align: left
 					font-size: 2.2rem
-					margin: 0
+					margin: 1.3rem 0 0
 					line-height: 2.4rem
 				img
 					width: 100%
