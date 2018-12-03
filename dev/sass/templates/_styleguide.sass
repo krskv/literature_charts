@@ -194,6 +194,7 @@ p
 
 .formated_text
 	p
+		margin: 2rem 0
 		font-size: 1.9rem
 		line-height: 2.7rem
 	a
@@ -203,6 +204,16 @@ p
 		font-weight: 600
 		&:hover
 			text-decoration: underline
+	blockquote
+		background-color: $graybg
+		font-style: italic
+		text-align: justify
+		width: 100%
+		margin: 0
+		font-size: 1.9rem
+		line-height: 2.8rem
+		font-family: Lora
+		padding: 1.2rem 1.8rem
 	img
 		width: 100%
 		height: auto
@@ -232,6 +243,66 @@ p
 	h5,h6
 		font-size: 2rem
 		line-height: 2.2rem
+
+.author_comment
+	display: flex
+	border: 2px solid #efefef
+	margin: 2.5rem 0
+	@include respond-to(small)
+		flex-direction: column
+	img
+		max-width: 100%
+		width: 23rem
+		height: 14.4rem
+		object-fit: cover
+		margin: 0
+		object-position: center center
+		@include respond-to(small)
+			max-width: 100%
+			width: 30rem
+			height: 19rem
+	&__content
+		display: inline-flex
+		flex-direction: column
+		padding: 4rem 1.5rem 3.6rem 5rem
+		h3
+			font-size: 2.4rem
+			color: #5d88bf
+			font-weight: 600
+			text-transform: uppercase
+			line-height: 2.4rem
+			margin-top: 0
+			position: relative
+			&:before
+				content: '—'
+				position: absolute
+				top: -.1rem
+				left: -3rem
+		h4
+			font-size: 1.9rem
+			margin-top: 0
+			line-height: 2.7rem
+		ul
+			display: flex
+			margin: 2rem 0 0
+			padding-left: 0
+			justify-content: flex-end
+			li
+				margin: 0 1rem
+				&:last-child
+					margin-right: 0
+				a
+					&:hover
+						font-style: normal
+					img
+						width: 3rem
+						height: auto
+	&__text
+		margin-top: 1rem
+		p
+			margin: 2.5rem 0
+			font-style: italic
+			text-align: left
 
 .button_wrapper
 	margin-top: 5rem
