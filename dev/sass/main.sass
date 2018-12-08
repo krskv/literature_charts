@@ -1,5 +1,26 @@
 @import "templates/_vars.sass"
 
+.selection_sharing
+	position: absolute
+	top: 0
+	left: 0
+	z-index: 999
+	visibility: hidden
+	&.visible
+		visibility: visible
+	ul
+		display: flex
+		li
+			margin: 0 4px
+			a
+				background-color: #212e58
+				display: inline-flex
+				border-radius: 50%
+				align-items: center
+				justify-content: center
+				img
+					width: 30px
+
 footer
 	width: 100%
 	.footer_nav__wrapper
