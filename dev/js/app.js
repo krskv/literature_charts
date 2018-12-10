@@ -28,7 +28,7 @@
   //HIGHLIGHTED TEXT SHARING
 
   //Activate highlighted text sharing
-  $('.formated_text').mouseup(function(){
+  $(document).mouseup(function(){
     setTimeout( textHighlightSharing, 100 );
   });
 
@@ -36,7 +36,7 @@
     var share       = $('#selection_sharing'),
         highlight   = getHighlight();
 
-    if (highlight.text === ''){
+    if (highlight.text === '' || !$(highlight.anchorNode.parentNode).parent('.formated_text').length || !$(highlight.extentNode.parentNode).parent('.formated_text').length){
       share.removeClass('visible');
       return;
     }
@@ -48,34 +48,50 @@
     share.css('left', highlight.offset.left +'px');
     share.addClass('visible');
 
-    $('.selection_sharing__twitter').attr('href','https://twitter.com/intent/tweet?text='+ encodeURIComponent(txt) + encodeURIComponent('\n') +'&url=' + encodeURIComponent(url));
-    $('.selection_sharing__mail').attr('href','mailto:?subject=' + encodeURIComponent(txt) + '&body=' + encodeURIComponent(txt) + encodeURIComponent('\n') + encodeURIComponent(url));
+    $('.selection_sharing__twitter').attr('href','https://twitter.com/intent/tweet?text='+ encodeURIComponent(highlight.text) + encodeURIComponent('\n') +'&url=' + encodeURIComponent(url));
+    $('.selection_sharing__mail').attr('href','mailto:?subject=Цитата за ресурсу: ' + encodeURIComponent(url) + '&body=' + encodeURIComponent(highlight.text) + encodeURIComponent('\n') + encodeURIComponent(url));
 
   };
 
-  function getHighlight() {
-
-    var selection = window.getSelection(),
-        object = {
-          text   : '',
-          offset : null
-        };
-
-    if ( selection.rangeCount > 0 ) {
-        var rect        = selection.getRangeAt(0).getBoundingClientRect(),
-            scrollLeft  = window.pageXOffset ||document.documentElement.scrollLeft,
-            scrollTop   = window.pageYOffset || document.documentElement.scrollTop;
-        object = {
-            text   : selection.toString().trim(),
-            offset   : { top: rect.top + scrollTop, left: rect.left + scrollLeft }
-        };
-    }
-
-    return object;
-  }
 
   //==========
 })(jQuery);
+
+// function hasParentWithClass(nodeToCheck,parentClassName) {
+//   if(!nodeToCheck || !parentClassName)
+//     return false;
+//   for (var currentNode = nodeToCheck; currentNode.tagName != 'HTML' ; currentNode = currentNode.parentNode) {
+//     if(currentNode.className && currentNode.className.includes(parentClassName))
+//      return true;
+//   }
+//   return false;
+// }
+
+function getHighlight() {
+  var selection = window.getSelection(),
+      object = {
+        text   : '',
+        anchorNode: null,
+        extentNode: null,
+        offset : null
+      };
+
+  if ( selection.rangeCount > 0 ) {
+      var rect        = selection.getRangeAt(0).getBoundingClientRect(),
+          scrollLeft  = window.pageXOffset ||document.documentElement.scrollLeft,
+          scrollTop   = window.pageYOffset || document.documentElement.scrollTop;
+      object = {
+          text   : selection.toString().trim(),
+          anchorNode: selection.anchorNode,
+          extentNode: selection.extentNode,
+          offset   : { top: rect.top + scrollTop, left: rect.left + scrollLeft }
+      };
+  }
+
+  return object;
+}
+
+
 
 //SMOOTHSCROLL ACTIVATION
 var scroll = new SmoothScroll('a[href*="#"]', {
